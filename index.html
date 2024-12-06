@@ -10,64 +10,63 @@
 </head>
 <body>
     <section id="estrellita" class="dark">
-      
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="/musica.html">Musica</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/directos.html">Directos(?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/juegos.html">Juegubis</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/kaomoji.html">Kaomojis</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/musica.html">Musica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/directos.html">Directos(?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/juegos.html">Juegubis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/kaomoji.html">Kaomojis</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    <p>Cambiar modo -></p>
-    <button id="switch">Oscuro</button>
+        <p>Cambiar modo -></p>
+        <button id="switch">Oscuro</button>
+
+        <div class="container text-center">
+            <div class="row align-items-start">
+                <div class="col"></div>
+                <div class="col">
+                    <h1>Día a día</h1>
+                    <h3>Un intento de blog personal de cosas que generalmente hago a diario</h3>
+                    <img src="https://media.tenor.com/iPKa5SFvaKAAAAAi/touhou-cirno.gif" alt="Cirno spinning">
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+
 
     <script>
-      document.getElementById('switch').addEventListener('click',()=>{
-      if (document.documentElement.getAttribute('estrellita') == 'dark') {
-          document.documentElement.setAttribute('estrellita','light')
-          document.getElementById("switch").innerHTML = "Claro";
-      }
-      else {
-          document.documentElement.setAttribute('estrellita','dark')
-          document.getElementById("switch").innerHTML = "Oscuro";
-      }
-  })
+        const switchButton = document.getElementById('switch');
+        const section = document.getElementById('estrellita');
+
+        switchButton.addEventListener('click', () => {
+            if (section.classList.contains('dark')) {
+                section.classList.remove('dark');
+                section.classList.add('light');
+                switchButton.innerHTML = "Claro";
+            } else {
+                section.classList.remove('light');
+                section.classList.add('dark');
+                switchButton.innerHTML = "Oscuro";
+            }
+        });
     </script>
-
-
-
-    <div class="container text-center">
-        <div class="row align-items-start">
-          <div class="col">
-            
-          </div>
-          <div class="col">
-            <h1>Día a día</h1>
-            <h3>Un intento de blog personal de cosas que generalmente hago a diario</h1>
-            <img src="https://media.tenor.com/iPKa5SFvaKAAAAAi/touhou-cirno.gif" alt="Cirno spinning">
-          </div>
-          <div class="col">
-            
-          </div>
-        </div>
-      </div>
+</section>
 </body>
 </html>
