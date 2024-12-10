@@ -39,3 +39,26 @@
         <div style="padding-left: 1%">
             <button id="switch">Oscuro</button>
         </div>
+
+        asd
+
+      
+        <script>
+            const switchButton = document.getElementById('switch');
+            const section = document.getElementById('estrellita');
+    
+            switchButton.addEventListener('click', () => {
+                if (section.classList.contains('dark')) {
+                    section.classList.remove('dark');
+                    section.classList.add('light');
+                    switchButton.innerHTML = "Claro";
+                } else {
+                    section.classList.remove('light');
+                    section.classList.add('dark');
+                    switchButton.innerHTML = "Oscuro";
+                }
+            });
+        </script>
+    </section>
+    </body>
+    </html>

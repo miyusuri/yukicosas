@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 :root {
   color-scheme: light dark;
 
@@ -38,6 +41,11 @@ section {
   background-color: var(--dark-bg);
   color: var(--dark-color);
 }
-.cirno img{
-  width: 70%;
+.cirno img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
