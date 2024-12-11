@@ -49,3 +49,7 @@ section {
   display: block;
   margin: 0 auto;
 }
+
+.carousel-item iframe {
+  max-width: 60%;
+}
