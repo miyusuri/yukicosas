@@ -82,3 +82,31 @@ section {
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none !important;
+}
+
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  height: 500px; /* Ajusta según el tamaño que desees */
+  text-align: center; /* Centra el texto */
+  overflow: hidden; /* Asegura que no se desborde el contenido */
+}
+
+.carousel-item iframe {
+  width: 100%;
+  min-height: 300px; /* Puedes ajustar este valor */
+  max-height: 400px; /* Ajusta este valor también */
+  object-fit: contain;
+}
+
+.carousel-item h2, .carousel-item p {
+  margin: 0; /* Elimina márgenes extra */
+  padding: 10px 0; /* Da algo de espacio entre el texto y el iframe */
+}
