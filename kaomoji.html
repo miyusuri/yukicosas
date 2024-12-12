@@ -41,47 +41,53 @@
                 <div class="col"></div>
                 <div class="col">
                     <h1>Kaomojis</h1>
-                    <h3>Los Kaomojis son estas caritas lindas, acá una pequeña recopilacion de las que mas me gustan</h3>
+                    <h4>Los Kaomojis son estas caritas lindas, acá una pequeña recopilacion de las que mas me gustan</h4>
                     <div class="cirno">
                         <img src="https://i.pinimg.com/736x/2c/5e/14/2c5e14f36252066199e1e3918b5a91ff.jpg" alt="Cirno cirno">
                     </div>
                 </div>
                 <div class="col"></div>
             </div>
+            <br>
+            <h3>Podes clickear cualquiera para copiarlo al portapapeles y usarlo dode quieras</h3>
+            <br>
         </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-    const body = document.body;
-    const switchButton = document.getElementById('switch');
 
-    const savedMode = localStorage.getItem('mode');
-    if (savedMode === 'dark') {
-        body.classList.add('dark-mode');
-        body.classList.remove('light-mode');
-        switchButton.innerHTML = "Claro";
-    } else {
-        body.classList.add('light-mode');
-        body.classList.remove('dark-mode');
-        switchButton.innerHTML = "Oscuro";
-    }
+        <div class="kaomoji-grid">
+            <div class="kaomoji">( °□°)</div>
+            <div class="kaomoji">( ˚ ㅅ ˚ )</div>
+            <div class="kaomoji">(＾◇＾)</div>
+            <div class="kaomoji">(＾ω＾)</div>
+            <div class="kaomoji">(>ω<)</div>
+            <div class="kaomoji">(｡•ω•｡)</div>
+            <div class="kaomoji">(ﾟ･ω･ﾟ☆)</div>
+            <div class="kaomoji">(>･ω･<)</div>
+            <div class="kaomoji">(～◕‿◕～)</div>
+            <div class="kaomoji">(・∀・)</div>
+            <div class="kaomoji">(๑´∀｀๑)</div>
+            <div class="kaomoji">(*＾ω＾)</div>
+            <div class="kaomoji">(T_T)</div>
+            <div class="kaomoji">(ノง･_･)ノง</div>
+            <div class="kaomoji">(＾？＾)</div>
+            <div class="kaomoji">(o∀o)</div>
+            <div class="kaomoji">＼(^o^)／</div>
+            <div class="kaomoji">(‿‿)</div>
+            <div class="kaomoji">(>＿<)</div>
+            <div class="kaomoji">(._.)</div>
+        </div>
 
-    switchButton.addEventListener('click', () => {
-        if (body.classList.contains('dark-mode')) {
-            body.classList.remove('dark-mode');
-            body.classList.add('light-mode');
-            switchButton.innerHTML = "Oscuro";
-            localStorage.setItem('mode', 'light');
-        } else {
-            body.classList.remove('light-mode');
-            body.classList.add('dark-mode');
-            switchButton.innerHTML = "Claro";
-            localStorage.setItem('mode', 'dark');
-        }
-    });
-});
-
-        </script>
   </section>
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.kaomoji').forEach(box => {
+                box.addEventListener('click', () => {
+                    const kaomoji = box.textContent;
+                    navigator.clipboard.writeText(kaomoji);
+                });
+            });
+        });
+</script>
+  <script src="script.js"></script>
   </body>
   </html>
