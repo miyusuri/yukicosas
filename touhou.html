@@ -10,7 +10,7 @@
 </head>
 <body>
     <section id="estrellita" class="dark">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,33 +31,43 @@
                             <a class="nav-link" href="/kaomoji.html">Kaomojis</a>
                         </li>
                     </ul>
+                    <button id="switch" class="btn btn-secondary ms-auto">Oscuro</button>
                 </div>
             </div>
         </nav>
 
-        <br>
-        <div style="padding-left: 1%">
-            <button id="switch">Oscuro</button>
-        </div>
-
-        asd
-
       
         <script>
-            const switchButton = document.getElementById('switch');
-            const section = document.getElementById('estrellita');
-    
-            switchButton.addEventListener('click', () => {
-                if (section.classList.contains('dark')) {
-                    section.classList.remove('dark');
-                    section.classList.add('light');
-                    switchButton.innerHTML = "Claro";
-                } else {
-                    section.classList.remove('light');
-                    section.classList.add('dark');
-                    switchButton.innerHTML = "Oscuro";
-                }
-            });
+            document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const switchButton = document.getElementById('switch');
+
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode === 'dark') {
+        body.classList.add('dark-mode');
+        body.classList.remove('light-mode');
+        switchButton.innerHTML = "Claro";
+    } else {
+        body.classList.add('light-mode');
+        body.classList.remove('dark-mode');
+        switchButton.innerHTML = "Oscuro";
+    }
+
+    switchButton.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            switchButton.innerHTML = "Oscuro";
+            localStorage.setItem('mode', 'light');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            switchButton.innerHTML = "Claro";
+            localStorage.setItem('mode', 'dark');
+        }
+    });
+});
+
         </script>
     </section>
     </body>
